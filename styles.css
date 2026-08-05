@@ -532,7 +532,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   background: var(--green-500);
   color: var(--navy-950);
 }
-.feedback-card small { display: block; margin-top: 12px; color: #8ea7bd; text-align: center; }
+.feedback-card small { display: block; margin-top: 10px; color: #8ea7bd; text-align: center; }
+.feedback-card small a { color: var(--green-500); font-weight: 800; }
 
 .faq-section { background: #eef4f8; }
 

@@ -37,3 +37,5 @@ Os botões do site agora fazem o download direto deste APK.
 
 ## Estrutura plana
 Esta versão foi preparada sem pastas. Todos os arquivos devem ficar diretamente na raiz do repositório.
+
+- E-mail de contato: jrlogistica.drive@gmail.com
