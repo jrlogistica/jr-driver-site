@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="J.R Driver — aplicativo para entregadores autônomos e motoristas parceiros. Participe dos testes da versão Alpha.">
+  <meta name="description" content="J.R Driver — aplicativo para entregadores autônomos e motoristas parceiros. Baixe a versão Alpha e participe dos testes.">
   <meta name="theme-color" content="#061a33">
   <meta property="og:title" content="J.R Driver">
   <meta property="og:description" content="Baixe a versão Alpha do J.R Driver e participe dos testes.">
@@ -12,6 +12,55 @@
   <title>J.R Driver | Aplicativo para entregadores</title>
   <link rel="icon" href="jr-driver-logo.png">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .download-counter {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+      padding: 10px 14px;
+      border: 1px solid rgba(19,207,122,.24);
+      border-radius: 14px;
+      background: rgba(255,255,255,.055);
+      color: #c9dbea;
+      font-size: 13px;
+    }
+    .download-counter-icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(19,207,122,.12);
+      color: #13cf7a;
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .download-counter-copy { display: grid; line-height: 1.25; }
+    .download-counter-copy strong { color: white; font-size: 15px; }
+    .download-counter-copy span { color: #8fa9bf; font-size: 11px; }
+    .release-note {
+      margin-top: 14px;
+      color: #91a9bf;
+      font-size: 12px;
+    }
+    .version-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: #e8fbf2;
+      color: #087845;
+      font-size: 12px;
+      font-weight: 850;
+    }
+    @media (max-width:640px) {
+      .download-counter { width: 100%; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header" id="inicio">
@@ -31,7 +80,7 @@
         <a href="#instalacao">Instalação</a>
         <a href="#teste">Participar dos testes</a>
         <a href="#contato">Contato</a>
-        <a class="nav-download" href="J.R-Drive-App-9.4.0-alpha.3.apk" download>Baixar APK</a>
+        <a class="nav-download" href="J.R-Drive-App-9.4.0-alpha.3.apk" download data-download-link>Baixar APK</a>
       </nav>
     </div>
   </header>
@@ -50,16 +99,26 @@
             a organizar rotas, entregas, pendências e resultados do dia com mais praticidade.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="J.R-Drive-App-9.4.0-alpha.3.apk" download>
-              <span aria-hidden="true">↓</span> Baixar versão 9.4.0 Alpha 3
+            <a class="button button-primary" href="J.R-Drive-App-9.4.0-alpha.3.apk" download data-download-link>
+              <span aria-hidden="true">↓</span> Baixar versão <span data-current-version-label>9.4.0 Alpha 3</span>
             </a>
             <a class="button button-secondary" href="#como-funciona">Conhecer o aplicativo</a>
           </div>
+
+          <div class="download-counter" aria-live="polite">
+            <div class="download-counter-icon">↓</div>
+            <div class="download-counter-copy">
+              <strong><span id="download-count">—</span> downloads</strong>
+              <span id="download-counter-status">carregando contador</span>
+            </div>
+          </div>
+
           <div class="hero-meta">
             <div><strong>Android</strong><span>Instalação por APK</span></div>
-            <div><strong>9.4.0-alpha.3</strong><span>Versão atual</span></div>
-            <div><strong>Teste real</strong><span>Uso em campo</span></div>
+            <div><strong data-current-version>9.4.0-alpha.3</strong><span>Versão atual</span></div>
+            <div><strong data-current-size>6.7 MB</strong><span>Tamanho aproximado</span></div>
           </div>
+          <p class="release-note">O contador registra cada download iniciado pelos botões oficiais desta página.</p>
         </div>
 
         <div class="app-card" aria-label="Apresentação do J.R Driver">
@@ -72,13 +131,13 @@
           </div>
           <div class="app-card-copy">
             <span class="mini-label">FEITO PARA QUEM ENTREGA</span>
-            <h2>Rotas, entregas e controle do dia.</h2>
+            <h2>Rotas, entregas, notificações e controle do dia.</h2>
             <p>Uma solução prática para testar na rua e evoluir com o feedback de quem realmente trabalha com entregas.</p>
           </div>
           <div class="app-mini-stats">
             <div><span>✓</span> Cadastro de autônomo</div>
             <div><span>✓</span> Organização de rotas</div>
-            <div><span>✓</span> Controle financeiro</div>
+            <div><span>✓</span> Notificações e Rede J.R em teste</div>
           </div>
         </div>
       </div>
@@ -87,8 +146,8 @@
     <section class="trust-strip">
       <div class="container trust-grid">
         <div><strong>Aplicativo em teste</strong><span>Você ajuda a melhorar o J.R Driver</span></div>
-        <div><strong>Instalação gratuita</strong><span>APK disponível pelo GitHub</span></div>
-        <div><strong>Feedback direto</strong><span>Suporte pelo WhatsApp</span></div>
+        <div><strong>Instalação gratuita</strong><span>APK oficial disponível pelo site</span></div>
+        <div><strong>Notificações em tempo real</strong><span>Testes por Wi-Fi e internet móvel</span></div>
       </div>
     </section>
 
@@ -104,7 +163,7 @@
           <article class="feature-card">
             <div class="feature-icon">01</div>
             <h3>Cadastre-se como autônomo</h3>
-            <p>Crie seu perfil profissional no próprio aplicativo e envie seus dados para análise da J.R Logística.</p>
+            <p>Crie seu perfil profissional no aplicativo e, se quiser, participe da Rede J.R para receber oportunidades compatíveis com seu perfil.</p>
           </article>
           <article class="feature-card">
             <div class="feature-icon">02</div>
@@ -113,8 +172,8 @@
           </article>
           <article class="feature-card">
             <div class="feature-icon">03</div>
-            <h3>Acompanhe o resultado</h3>
-            <p>Marque entregas realizadas ou pendentes e acompanhe um resumo simples do dia e do financeiro.</p>
+            <h3>Acompanhe e receba avisos</h3>
+            <p>Marque entregas, acompanhe o resumo do dia e receba comunicados, avisos urgentes e atualizações do J.R Driver.</p>
           </article>
         </div>
       </div>
@@ -138,7 +197,8 @@
           <span class="section-kicker">INSTALAÇÃO</span>
           <h2>Baixe e instale em poucos minutos.</h2>
           <p class="section-intro">Como esta versão ainda não está na Play Store, o Android poderá pedir autorização para instalar o aplicativo pelo navegador.</p>
-          <a class="button button-primary" href="J.R-Drive-App-9.4.0-alpha.3.apk" download>Baixar APK agora</a>
+          <div class="version-badge">Versão disponível: <span data-current-version>9.4.0-alpha.3</span></div><br>
+          <a class="button button-primary" href="J.R-Drive-App-9.4.0-alpha.3.apk" download data-download-link>Baixar APK agora</a>
         </div>
 
         <ol class="steps-card">
@@ -154,7 +214,7 @@
         <div class="section-heading left-align">
           <span class="section-kicker">PARTICIPE DOS TESTES</span>
           <h2>Seu feedback ajuda a construir a próxima versão.</h2>
-          <p>Use o aplicativo durante uma rota real e conte o que funcionou, o que dificultou e o que precisa melhorar.</p>
+          <p>Use o aplicativo em uma rota real ou simulada e conte o que funcionou, o que dificultou e o que precisa melhorar.</p>
         </div>
 
         <div class="test-grid">
@@ -162,11 +222,13 @@
             <h3>O que testar</h3>
             <ul>
               <li>Cadastro e acesso como entregador autônomo</li>
+              <li>Entrada voluntária na Rede J.R e sincronização do perfil</li>
+              <li>Recebimento de notificações com Wi-Fi e 4G</li>
+              <li>Notificações com o aplicativo em segundo plano ou fora dos recentes</li>
               <li>Cadastro e organização dos pacotes</li>
               <li>Abertura de endereços no Google Maps</li>
               <li>Marcação de entregas e pendências</li>
               <li>Resumo do dia e controle financeiro</li>
-              <li>Funcionamento com Wi-Fi e internet móvel</li>
             </ul>
           </div>
 
@@ -205,6 +267,10 @@
             <p>Não. O modo Entregador Autônomo permite testar o aplicativo de forma independente.</p>
           </details>
           <details>
+            <summary>Preciso entrar na Rede J.R?</summary>
+            <p>Não. A participação é opcional. Quem escolher participar poderá testar recursos ligados ao perfil profissional e ao recebimento de oportunidades.</p>
+          </details>
+          <details>
             <summary>O Android mostrou um aviso de segurança. É normal?</summary>
             <p>Sim. Aplicativos instalados fora da Play Store exigem autorização do usuário. Baixe o APK somente pelo link oficial desta página.</p>
           </details>
@@ -219,7 +285,7 @@
           <h2>Pronto para testar na rua?</h2>
           <p>Baixe o aplicativo, faça seu cadastro e ajude a construir uma ferramenta feita para entregadores.</p>
         </div>
-        <a class="button button-light" href="J.R-Drive-App-9.4.0-alpha.3.apk" download>Baixar J.R Driver</a>
+        <a class="button button-light" href="J.R-Drive-App-9.4.0-alpha.3.apk" download data-download-link>Baixar J.R Driver</a>
       </div>
     </section>
   </main>
@@ -234,7 +300,7 @@
         <a href="privacidade.html">Política de privacidade</a>
         <a href="termos-de-teste.html">Termos de teste</a>
         <a href="mailto:jrlogistica.drive@gmail.com">E-mail</a>
-        <a href="J.R-Drive-App-9.4.0-alpha.3.apk" download>Baixar APK</a>
+        <a href="J.R-Drive-App-9.4.0-alpha.3.apk" download data-download-link>Baixar APK</a>
       </div>
       <p>© <span id="current-year"></span> J.R Logística. Todos os direitos reservados.</p>
     </div>
