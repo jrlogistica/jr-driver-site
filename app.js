@@ -21,10 +21,10 @@ if (yearTarget) {
 }
 
 const DRIVER_RELEASE = {
-  version: '9.7.1-alpha.1',
-  label: '9.7.1 Alpha 1',
-  apk: 'J.R-Drive-App-9.7.1-alpha.1.apk',
-  size: '8.2 MB'
+  version: '9.7.4-alpha.1',
+  label: '9.7.4 Alpha 1',
+  apk: 'J.R-Drive-App-9.7.4-alpha.1.apk',
+  size: '≈ 8 MB'
 };
 
 const SUPABASE = {
@@ -91,7 +91,6 @@ async function handleDownload(event) {
   event.preventDefault();
   downloadBeingHandled = true;
 
-  const link = event.currentTarget;
   const apkUrl = new URL(DRIVER_RELEASE.apk, window.location.href).href;
 
   try {
@@ -102,7 +101,6 @@ async function handleDownload(event) {
   } catch (error) {
     console.warn('Não foi possível registrar o download:', error);
   } finally {
-    // O download não é bloqueado se o contador estiver indisponível.
     const temporaryLink = document.createElement('a');
     temporaryLink.href = apkUrl;
     temporaryLink.download = DRIVER_RELEASE.apk;
