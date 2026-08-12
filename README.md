@@ -8,6 +8,8 @@ Site estático pronto para publicação no GitHub Pages.
 - `app.js` — menu mobile e ano automático
 - `privacidade.html` — política de privacidade
 - `termos-de-teste.html` — termos da versão Alpha
+- seção “O projeto” — explica por que o J.R Driver está sendo desenvolvido
+- seção “Rede J.R” — apresenta a rede profissional, benefícios e forma de participação
 - `arquivos de imagem na raiz` — logos e imagens
 - `.nojekyll` — evita processamento do Jekyll no GitHub Pages
 
@@ -39,3 +41,9 @@ Os botões do site agora fazem o download direto deste APK.
 Esta versão foi preparada sem pastas. Todos os arquivos devem ficar diretamente na raiz do repositório.
 
 - E-mail de contato: jrlogistica.drive@gmail.com
+
+## Atualização de conteúdo
+- explicação ampliada sobre a origem e o propósito do J.R Driver
+- participação independente no aplicativo esclarecida
+- nova seção completa sobre a Rede J.R
+- aviso de que a Rede J.R é opcional e não garante contratação ou renda
