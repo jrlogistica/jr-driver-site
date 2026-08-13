@@ -24,7 +24,7 @@ jobs:
       - name: Baixar arquivos do site
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Identificar o novo APK
         id: apk
