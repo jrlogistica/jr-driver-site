@@ -10,6 +10,8 @@ Site estático pronto para publicação no GitHub Pages.
 - `termos-de-teste.html` — termos da versão Alpha
 - seção “O projeto” — explica por que o J.R Driver está sendo desenvolvido
 - seção “Rede J.R” — apresenta a rede profissional, benefícios e forma de participação
+- seção “Discord” — convite permanente para a comunidade oficial da J.R Drive
+- seção “Atualizações” — resumo das mudanças mais importantes de cada versão
 - `arquivos de imagem na raiz` — logos e imagens
 - `.nojekyll` — evita processamento do Jekyll no GitHub Pages
 
@@ -47,3 +49,5 @@ Esta versão foi preparada sem pastas. Todos os arquivos devem ficar diretamente
 - participação independente no aplicativo esclarecida
 - nova seção completa sobre a Rede J.R
 - aviso de que a Rede J.R é opcional e não garante contratação ou renda
+- convite oficial do Discord: https://discord.gg/8UrH73WfRu
+- histórico de atualizações iniciado com as versões 9.4.0, 9.5.4 e 9.7.4
