@@ -993,7 +993,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   box-shadow: 0 14px 30px rgba(3,17,38,.12);
 }
 
-.nav-instagram {
+.nav-social {
   width: 38px;
   height: 38px;
   display: inline-grid !important;
@@ -1003,16 +1003,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
   border: 1px solid rgba(255,255,255,.14);
   border-radius: 12px;
   background: rgba(255,255,255,.06);
-  color: white;
 }
 
-.nav-instagram:hover {
-  border-color: rgba(19,207,122,.45);
-  background: rgba(19,207,122,.12);
-  color: var(--green-500);
+.nav-social:hover {
+  border-color: rgba(255,255,255,.3);
+  background: rgba(255,255,255,.1);
 }
 
-.nav-instagram svg,
+.nav-social.nav-instagram { color: #ff78ad; }
+.nav-social.nav-discord { color: #b9bdff; }
+
+.nav-social svg,
 .social-channel > svg {
   width: 21px;
   height: 21px;
@@ -1021,6 +1022,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   stroke-width: 1.8;
 }
 
+.nav-social svg path,
 .social-channel > svg path {
   fill: currentColor;
   stroke: none;
@@ -1123,15 +1125,21 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .social-discord { color: #aeb4ff; }
 
 @media (max-width: 980px) {
-  .nav-instagram {
+  .nav-social {
     width: auto;
     height: auto;
     display: flex !important;
+    gap: 8px;
     padding: 10px 12px !important;
   }
 
   .nav-instagram::after {
     content: "Instagram";
+    font-weight: 800;
+  }
+
+  .nav-discord::after {
+    content: "Discord";
     font-weight: 800;
   }
 
