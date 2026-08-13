@@ -24,8 +24,7 @@ Site estático pronto para publicação no GitHub Pages.
 6. Salve e aguarde o endereço ser liberado.
 
 ## Links configurados
-- Release disponível: J.R-Drive-App-9.7.4-alpha.1.apk
-- Próxima versão em preparação: 9.7.5-alpha.1
+- Release disponível: J.R-Drive-App-9.7.5-alpha.1.apk
 - WhatsApp: (51) 99464-7219
 
 ## Observação
@@ -33,8 +32,8 @@ O botão de download abre a página da versão no GitHub Releases. Quando public
 
 
 ## APK incluído
-- Arquivo: `J.R-Drive-App-9.7.4-alpha.1.apk`
-- Versão: `9.7.4-alpha.1`
+- Arquivo: `J.R-Drive-App-9.7.5-alpha.1.apk`
+- Versão: `9.7.5-alpha.1`
 - Tamanho: 8.2 MB
 
 Os botões do site agora fazem o download direto deste APK.
@@ -51,4 +50,4 @@ Esta versão foi preparada sem pastas. Todos os arquivos devem ficar diretamente
 - nova seção completa sobre a Rede J.R
 - aviso de que a Rede J.R é opcional e não garante contratação ou renda
 - convite oficial do Discord: https://discord.gg/8UrH73WfRu
-- histórico de atualizações com as versões 9.4.0, 9.5.4 e 9.7.4, além da prévia da 9.7.5
+- histórico de atualizações com as versões 9.4.0, 9.5.4, 9.7.4 e 9.7.5
