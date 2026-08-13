@@ -1,0 +1,101 @@
+name: Avisar Discord sobre novo APK
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "*.apk"
+      - "**/*.apk"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: discord-apk-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  anunciar:
+    name: Publicar anúncio no Discord
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar arquivos do site
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Identificar o novo APK
+        id: apk
+        shell: bash
+        run: |
+          apk_path="$(git diff --name-only --diff-filter=AM "${{ github.event.before }}" "${{ github.sha }}" -- "*.apk" "**/*.apk" | tail -n 1)"
+
+          if [ -z "$apk_path" ]; then
+            echo "Nenhum APK novo ou atualizado foi encontrado."
+            exit 1
+          fi
+
+          apk_file="$(basename "$apk_path")"
+          apk_version="${apk_file%.apk}"
+          apk_version="${apk_version#J.R-Drive-App-}"
+
+          {
+            echo "path=$apk_path"
+            echo "file=$apk_file"
+            echo "version=$apk_version"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Enviar mensagem para o canal de anúncios
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          APK_PATH: ${{ steps.apk.outputs.path }}
+          APK_FILE: ${{ steps.apk.outputs.file }}
+          APK_VERSION: ${{ steps.apk.outputs.version }}
+        shell: bash
+        run: |
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then
+            echo "::error::O segredo DISCORD_WEBHOOK_URL ainda não foi configurado no repositório."
+            exit 1
+          fi
+
+          site_url="https://jrlogistica.github.io/jr-driver-site/"
+          apk_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/${APK_PATH}"
+          published_at="$(date --utc +'%Y-%m-%dT%H:%M:%SZ')"
+
+          payload="$(jq -n             --arg site_url "$site_url"             --arg apk_url "$apk_url"             --arg apk_file "$APK_FILE"             --arg apk_version "$APK_VERSION"             --arg published_at "$published_at"             '{
+              username: "J.R Driver",
+              embeds: [
+                {
+                  title: "🚀 Nova atualização do J.R Driver",
+                  description: "Uma nova versão de testes do aplicativo está disponível para download.",
+                  url: $site_url,
+                  color: 3066993,
+                  fields: [
+                    {
+                      name: "Versão",
+                      value: ("**" + $apk_version + "**"),
+                      inline: true
+                    },
+                    {
+                      name: "Arquivo",
+                      value: $apk_file,
+                      inline: true
+                    },
+                    {
+                      name: "Baixar atualização",
+                      value: ("[Abrir o site](" + $site_url + ") • [Baixar APK diretamente](" + $apk_url + ")"),
+                      inline: false
+                    }
+                  ],
+                  footer: {
+                    text: "J.R Logística • Programa de testes"
+                  },
+                  timestamp: $published_at
+                }
+              ]
+            }'
+          )"
+
+          curl             --fail-with-body             --silent             --show-error             -H "Content-Type: application/json"             -d "$payload"             "$DISCORD_WEBHOOK_URL"
