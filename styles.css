@@ -1095,31 +1095,69 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .social-channel {
   display: grid;
-  grid-template-columns: 46px 1fr;
-  gap: 14px;
+  grid-template-columns: 58px 1fr;
+  gap: 17px;
   align-items: center;
-  min-height: 132px;
-  padding: 20px;
-  border: 1px solid rgba(255,255,255,.1);
+  min-height: 144px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,.11);
   border-radius: 18px;
   background: rgba(255,255,255,.055);
-  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+  transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
 }
 
 .social-channel:hover {
   transform: translateY(-3px);
   border-color: rgba(255,255,255,.24);
   background: rgba(255,255,255,.09);
+  box-shadow: 0 18px 34px rgba(0,0,0,.18);
 }
 
-.social-channel > svg {
-  width: 42px;
-  height: 42px;
-}
-
-.social-channel > span {
+.social-icon {
+  width: 58px;
+  height: 58px;
   display: grid;
-  gap: 3px;
+  place-items: center;
+  border-radius: 17px;
+  color: white;
+  box-shadow: 0 12px 24px rgba(0,0,0,.2);
+}
+
+.social-icon-instagram {
+  background: radial-gradient(circle at 30% 105%, #ffd600 0 18%, #ff7a00 32%, #ff0169 57%, #d300c5 78%, #7638fa 100%);
+}
+
+.social-icon-discord {
+  background: #5865f2;
+}
+
+.social-icon svg {
+  width: 29px;
+  height: 29px;
+  display: block;
+}
+
+.social-icon-instagram svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.social-icon-instagram .social-icon-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+.social-icon-discord svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.social-channel-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
 }
 
 .social-channel small {
@@ -1129,20 +1167,20 @@ button, a { -webkit-tap-highlight-color: transparent; }
   letter-spacing: .14em;
 }
 
+.social-instagram small { color: #ff78ad; }
+.social-discord small { color: #aeb4ff; }
+
 .social-channel strong {
   color: white;
   font-size: 17px;
 }
 
 .social-channel em {
-  color: #9eb3c6;
+  color: #a9bfd3;
   font-size: 12px;
   font-style: normal;
-  line-height: 1.35;
+  line-height: 1.4;
 }
-
-.social-instagram { color: #ff5f9e; }
-.social-discord { color: #aeb4ff; }
 
 @media (max-width: 980px) {
   .nav-socials {
