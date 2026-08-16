@@ -7,7 +7,6 @@ on:
     paths:
       - "*.apk"
       - "**/*.apk"
-      - ".github/workflows/notify-discord-apk.yml"
   workflow_dispatch:
 
 permissions:
@@ -38,7 +37,7 @@ jobs:
             apk_path="$(git diff --name-only --diff-filter=AM "${{ github.event.before }}" "${{ github.sha }}" -- "*.apk" "**/*.apk" | tail -n 1)"
           fi
 
-          # Em reenvio manual ou correção do workflow, anuncia o APK mais recente.
+          # Em reenvio manual, anuncia o APK mais recente.
           if [ -z "$apk_path" ]; then
             apk_path="$(find . -type f -name 'J.R-Drive-App-*.apk' -printf '%P\n' | sort -V | tail -n 1)"
           fi
