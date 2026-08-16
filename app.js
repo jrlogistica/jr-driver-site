@@ -21,9 +21,9 @@ if (yearTarget) {
 }
 
 const DRIVER_RELEASE = {
-  version: '9.7.5-alpha.1',
-  label: '9.7.5 Alpha 1',
-  apk: 'J.R-Drive-App-9.7.5-alpha.1.apk',
+  version: '9.7.9-alpha.1',
+  label: '9.7.9 Alpha 1',
+  apk: 'J.R-Drive-App-9.7.9-alpha.1.apk',
   size: '8.2 MB'
 };
 
