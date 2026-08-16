@@ -7,6 +7,8 @@ on:
     paths:
       - "*.apk"
       - "**/*.apk"
+      - ".github/workflows/notify-discord-apk.yml"
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -26,14 +28,23 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Identificar o novo APK
+      - name: Identificar o APK a anunciar
         id: apk
         shell: bash
         run: |
-          apk_path="$(git diff --name-only --diff-filter=AM "${{ github.event.before }}" "${{ github.sha }}" -- "*.apk" "**/*.apk" | tail -n 1)"
+          apk_path=""
 
+          if [ "${{ github.event_name }}" = "push" ]; then
+            apk_path="$(git diff --name-only --diff-filter=AM "${{ github.event.before }}" "${{ github.sha }}" -- "*.apk" "**/*.apk" | tail -n 1)"
+          fi
+
+          # Em reenvio manual ou correção do workflow, anuncia o APK mais recente.
           if [ -z "$apk_path" ]; then
-            echo "Nenhum APK novo ou atualizado foi encontrado."
+            apk_path="$(find . -type f -name 'J.R-Drive-App-*.apk' -printf '%P\n' | sort -V | tail -n 1)"
+          fi
+
+          if [ -z "$apk_path" ] || [ ! -f "$apk_path" ]; then
+            echo "::error::Nenhum APK válido foi encontrado para anunciar."
             exit 1
           fi
 
@@ -64,14 +75,28 @@ jobs:
           apk_url="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/${APK_PATH}"
           published_at="$(date --utc +'%Y-%m-%dT%H:%M:%SZ')"
 
-          payload="$(jq -n             --arg site_url "$site_url"             --arg apk_url "$apk_url"             --arg apk_file "$APK_FILE"             --arg apk_version "$APK_VERSION"             --arg published_at "$published_at"             '{
+          release_notes="Melhorias, correções e evolução contínua do J.R Driver. Confira o histórico completo no site oficial."
+          if [ "$APK_VERSION" = "9.7.9-alpha.1" ]; then
+            release_notes="• Rotas canceladas no Enterprise são removidas do Driver na sincronização\n• Interface escura revisada e Financeiro padronizado\n• Datas locais e ícones de calendário corrigidos"
+          fi
+
+          payload="$(jq -n \
+            --arg site_url "$site_url" \
+            --arg apk_url "$apk_url" \
+            --arg apk_file "$APK_FILE" \
+            --arg apk_version "$APK_VERSION" \
+            --arg published_at "$published_at" \
+            --arg release_notes "$release_notes" \
+            '{
               username: "J.R Driver",
+              content: "@everyone 🚀 **Nova atualização do J.R Driver disponível!**",
+              allowed_mentions: { parse: ["everyone"] },
               embeds: [
                 {
-                  title: "🚀 Nova atualização do J.R Driver",
-                  description: "Uma nova versão de testes do aplicativo está disponível para download.",
+                  title: "J.R Driver — nova versão disponível",
+                  description: $release_notes,
                   url: $site_url,
-                  color: 3066993,
+                  color: 1298298,
                   fields: [
                     {
                       name: "Versão",
@@ -84,8 +109,8 @@ jobs:
                       inline: true
                     },
                     {
-                      name: "Baixar atualização",
-                      value: ("[Abrir o site](" + $site_url + ") • [Baixar APK diretamente](" + $apk_url + ")"),
+                      name: "Download",
+                      value: ("[Abrir o site oficial](" + $site_url + ") • [Baixar APK diretamente](" + $apk_url + ")"),
                       inline: false
                     }
                   ],
@@ -98,4 +123,29 @@ jobs:
             }'
           )"
 
-          curl             --fail-with-body             --silent             --show-error             -H "Content-Type: application/json"             -d "$payload"             "$DISCORD_WEBHOOK_URL"
+          if [[ "$DISCORD_WEBHOOK_URL" == *"?"* ]]; then
+            webhook_request_url="${DISCORD_WEBHOOK_URL}&wait=true"
+          else
+            webhook_request_url="${DISCORD_WEBHOOK_URL}?wait=true"
+          fi
+
+          response="$(curl \
+            --fail-with-body \
+            --silent \
+            --show-error \
+            -H "Content-Type: application/json" \
+            -d "$payload" \
+            "$webhook_request_url")"
+
+          message_id="$(printf '%s' "$response" | jq -r '.id // empty')"
+          channel_id="$(printf '%s' "$response" | jq -r '.channel_id // empty')"
+
+          if [ -z "$message_id" ] || [ -z "$channel_id" ]; then
+            echo "::error::O Discord respondeu, mas não confirmou a criação da mensagem."
+            printf '%s\n' "$response"
+            exit 1
+          fi
+
+          echo "Mensagem criada no Discord com sucesso."
+          echo "Canal ID: $channel_id"
+          echo "Mensagem ID: $message_id"
