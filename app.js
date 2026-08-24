@@ -120,3 +120,26 @@ downloadLinks.forEach((link) => {
 });
 
 loadDownloadCount();
+
+const copyEmailButton = document.querySelector('.copy-email');
+const emailFeedback = document.getElementById('email-feedback');
+
+if (copyEmailButton && emailFeedback) {
+  copyEmailButton.addEventListener('click', async () => {
+    const email = copyEmailButton.dataset.email;
+    if (!email) return;
+
+    try {
+      await navigator.clipboard.writeText(email);
+      copyEmailButton.textContent = 'E-mail copiado';
+      emailFeedback.textContent = 'Copiado para a área de transferência';
+    } catch {
+      emailFeedback.textContent = email;
+    }
+
+    window.setTimeout(() => {
+      copyEmailButton.textContent = 'Copiar e-mail';
+      emailFeedback.textContent = email;
+    }, 2400);
+  });
+}

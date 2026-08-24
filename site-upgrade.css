@@ -1,0 +1,364 @@
+/* Revisão visual após teste em tela 1908 x 960 */
+
+button {
+  font: inherit;
+}
+
+.button,
+.menu-toggle {
+  cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #6fffc2;
+  outline-offset: 3px;
+}
+
+#solucoes,
+#driver,
+#instalacao,
+#comercial,
+#sobre,
+#contato {
+  scroll-margin-top: 82px;
+}
+
+.email-address {
+  display: block;
+  min-height: 18px;
+  color: #a9c2d2;
+  font-size: 11px;
+  text-align: center;
+}
+
+.copy-email {
+  width: 100%;
+}
+
+.contact-actions .social-links {
+  justify-content: center;
+}
+
+/* Documentos legais */
+.legal-page .site-header {
+  position: relative;
+}
+
+.legal-page .nav-wrap {
+  min-height: 78px;
+}
+
+.legal-page .legal-nav {
+  display: flex;
+  align-items: center;
+}
+
+.legal-page .legal-nav a {
+  padding: 11px 16px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 11px;
+  color: #dbe8f1;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.legal-page .legal-nav a:hover {
+  border-color: rgba(19, 211, 138, .45);
+  color: #13d38a;
+}
+
+.legal-page .legal-hero {
+  padding: 74px 0 54px;
+}
+
+.legal-page .legal-hero .section-kicker {
+  margin-top: 0;
+}
+
+.legal-page .legal-hero h1 {
+  max-width: 850px;
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.04;
+}
+
+.legal-page .legal-hero p {
+  max-width: 760px;
+  margin-top: 16px;
+  font-size: 16px;
+}
+
+.legal-page .legal-content {
+  margin-top: -24px;
+  padding: 48px 54px;
+}
+
+.legal-page .legal-content h2 {
+  margin-bottom: 8px;
+  color: #0b2238;
+  font-size: 21px;
+}
+
+.legal-page .legal-content p {
+  margin-top: 0;
+  font-size: 15px;
+}
+
+@media (min-width: 1450px) {
+  .container {
+    width: min(1420px, calc(100% - 96px));
+  }
+
+  .nav-wrap {
+    min-height: 84px;
+  }
+
+  .brand-mark {
+    width: 52px;
+    height: 52px;
+  }
+
+  .brand-copy strong {
+    font-size: 19px;
+  }
+
+  .brand-copy small {
+    font-size: 10px;
+  }
+
+  .nav-links {
+    gap: 28px;
+    font-size: 14px;
+  }
+
+  .nav-cta {
+    padding: 13px 21px;
+  }
+
+  .hero {
+    min-height: calc(100vh - 84px);
+    display: grid;
+    align-items: center;
+    padding: 72px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.04fr .96fr;
+    gap: 92px;
+  }
+
+  .hero h1 {
+    max-width: 800px;
+    font-size: clamp(66px, 4.4vw, 84px);
+  }
+
+  .hero-text {
+    max-width: 740px;
+    font-size: 20px;
+  }
+
+  .suite-board {
+    padding: 28px;
+  }
+
+  .board-product {
+    grid-template-columns: 68px 1fr auto;
+    padding: 23px;
+  }
+
+  .board-icon {
+    width: 62px;
+    height: 62px;
+  }
+
+  .board-product h2 {
+    font-size: 27px;
+  }
+
+  .board-product p {
+    font-size: 13px;
+  }
+
+  .trust-grid > div {
+    padding: 28px 45px;
+  }
+
+  .trust-grid strong {
+    font-size: 15px;
+  }
+
+  .trust-grid small {
+    font-size: 12px;
+  }
+
+  .section {
+    padding: 82px 0;
+  }
+
+  .section-heading {
+    max-width: 820px;
+    margin-bottom: 42px;
+  }
+
+  .section-heading h2,
+  .product-copy h2 {
+    font-size: 56px;
+  }
+
+  .section-heading p,
+  .product-copy > p {
+    font-size: 18px;
+  }
+
+  .solution-card {
+    padding: 38px 40px;
+  }
+
+  .solution-brand h3 {
+    font-size: 30px;
+  }
+
+  .solution-brand p,
+  .check-list li {
+    font-size: 14px;
+  }
+
+  .product-layout,
+  .product-layout.reverse {
+    grid-template-columns: 1fr 1fr;
+    gap: 105px;
+  }
+
+  .driver-visual {
+    min-height: 550px;
+  }
+
+  .phone-shell {
+    width: 300px;
+  }
+
+  .phone-screen {
+    min-height: 520px;
+  }
+
+  .feature-points {
+    gap: 4px;
+  }
+
+  .feature-points article {
+    padding: 11px 0;
+  }
+
+  .feature-points strong {
+    font-size: 15px;
+  }
+
+  .feature-points p {
+    font-size: 13px;
+  }
+
+  .commercial-visual {
+    max-width: 700px;
+  }
+
+  .desktop-body {
+    min-height: 430px;
+  }
+
+  .installation {
+    padding: 34px 0;
+  }
+
+  .install-card {
+    gap: 90px;
+    padding: 24px 0;
+  }
+
+  .comparison-section {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  .comparison-row {
+    padding: 20px 34px;
+    font-size: 14px;
+  }
+
+  .comparison-row strong {
+    font-size: 14px;
+  }
+
+  .about-grid h2 {
+    font-size: 56px;
+  }
+
+  .contact-section {
+    padding: 74px 0;
+  }
+
+  .contact-card {
+    padding: 55px 68px;
+  }
+
+  .contact-card h2 {
+    font-size: 50px;
+  }
+
+  .footer-grid {
+    padding-inline: 8px;
+  }
+}
+
+@media (min-width: 1021px) and (max-height: 900px) {
+  .section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .driver-visual {
+    min-height: 510px;
+  }
+
+  .phone-screen {
+    min-height: 490px;
+  }
+
+  .installation {
+    padding: 26px 0;
+  }
+}
+
+@media (max-width: 1020px) {
+  #solucoes,
+  #driver,
+  #instalacao,
+  #comercial,
+  #sobre,
+  #contato {
+    scroll-margin-top: 72px;
+  }
+
+  .legal-page .legal-nav a {
+    padding: 9px 12px;
+  }
+}
+
+@media (max-width: 680px) {
+  .legal-page .brand-copy strong {
+    font-size: 14px;
+  }
+
+  .legal-page .legal-nav a {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .legal-page .legal-hero {
+    padding: 52px 0 42px;
+  }
+
+  .legal-page .legal-content {
+    margin-top: -16px;
+    padding: 28px 22px;
+  }
+}
