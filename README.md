@@ -5,7 +5,7 @@ Site institucional das soluções **J.R Driver** e **J.R Logística Comercial**,
 ## Produtos apresentados
 
 - **J.R Driver:** aplicativo Android para motoristas e entregadores. O APK Alpha permanece disponível para testes.
-- **J.R Logística Comercial:** sistema Windows independente para gestão operacional e financeira. O acesso público é feito por demonstração durante a fase de validação.
+- **J.R Logística Comercial:** sistema Windows independente para gestão operacional e financeira. Informações comerciais e compra são tratadas diretamente pela J.R.
 
 Os produtos compartilham a identidade e a experiência logística da J.R, mas funcionam de forma independente. O J.R Comercial não depende do Driver, Firebase ou servidor externo.
 
