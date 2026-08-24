@@ -34,6 +34,72 @@ button {
   box-shadow: 0 15px 34px rgba(4, 35, 56, .18);
 }
 
+/* Captura real do J.R Comercial — substitui o antigo painel ilustrativo. */
+.commercial-screenshot {
+  margin: 0;
+}
+
+.screenshot-frame {
+  overflow: hidden;
+  border: 1px solid #c7d9e3;
+  border-radius: 20px;
+  background: #061d31;
+  box-shadow: 0 32px 70px rgba(4, 37, 59, .2);
+  transform: perspective(1200px) rotateY(2deg);
+}
+
+.screenshot-bar {
+  min-height: 38px;
+  display: grid;
+  grid-template-columns: 62px 1fr 62px;
+  align-items: center;
+  padding: 0 14px;
+  color: #d9e7ef;
+  background: #061d31;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-align: center;
+}
+
+.screenshot-bar span {
+  display: flex;
+  gap: 6px;
+}
+
+.screenshot-bar i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3b5b73;
+}
+
+.screenshot-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.commercial-screenshot figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: #60798b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+
+.commercial-screenshot figcaption span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 5px rgba(19, 211, 138, .12);
+}
+
 .footer-brand .brand-logo {
   width: 70px;
   height: 47px;
