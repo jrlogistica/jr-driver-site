@@ -447,6 +447,25 @@ button:focus-visible {
 }
 
 @media (max-width: 680px) {
+  .screenshot-frame {
+    border-radius: 15px;
+    transform: none;
+  }
+
+  .screenshot-bar {
+    min-height: 34px;
+    grid-template-columns: 48px 1fr 48px;
+    padding-inline: 11px;
+    font-size: 7px;
+  }
+
+  .commercial-screenshot figcaption {
+    align-items: flex-start;
+    padding-inline: 8px;
+    font-size: 9px;
+    text-align: center;
+  }
+
   .brand-logo {
     width: 68px;
     height: 46px;
