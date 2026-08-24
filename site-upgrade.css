@@ -4,6 +4,42 @@ button {
   font: inherit;
 }
 
+.brand-logo {
+  width: 78px;
+  height: 52px;
+  flex: 0 0 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 6px;
+  overflow: hidden;
+  border: 1px solid rgba(19, 211, 138, .24);
+  border-radius: 14px;
+  background: #031326;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .22);
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.solution-brand .commercial-mark.brand-logo {
+  width: 94px;
+  height: 68px;
+  flex-basis: 94px;
+  padding: 4px 8px;
+  border-radius: 17px;
+  box-shadow: 0 15px 34px rgba(4, 35, 56, .18);
+}
+
+.footer-brand .brand-logo {
+  width: 70px;
+  height: 47px;
+  flex-basis: 70px;
+}
+
 .button,
 .menu-toggle {
   cursor: pointer;
@@ -114,8 +150,9 @@ button:focus-visible {
   }
 
   .brand-mark {
-    width: 52px;
-    height: 52px;
+    width: 84px;
+    height: 56px;
+    flex-basis: 84px;
   }
 
   .brand-copy strong {
@@ -344,6 +381,18 @@ button:focus-visible {
 }
 
 @media (max-width: 680px) {
+  .brand-logo {
+    width: 68px;
+    height: 46px;
+    flex-basis: 68px;
+  }
+
+  .solution-brand .commercial-mark.brand-logo {
+    width: 78px;
+    height: 58px;
+    flex-basis: 78px;
+  }
+
   .legal-page .brand-copy strong {
     font-size: 14px;
   }
