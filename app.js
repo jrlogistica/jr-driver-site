@@ -38,6 +38,8 @@ const versionLabelTargets = document.querySelectorAll('[data-current-version-lab
 const sizeTargets = document.querySelectorAll('[data-current-size]');
 const countTarget = document.getElementById('download-count');
 const countStatus = document.getElementById('download-counter-status');
+const commercialSalesCount = document.getElementById('commercial-sales-count');
+const commercialSalesLabel = document.getElementById('commercial-sales-label');
 
 versionTargets.forEach((target) => { target.textContent = DRIVER_RELEASE.version; });
 versionLabelTargets.forEach((target) => { target.textContent = DRIVER_RELEASE.label; });
@@ -120,6 +122,30 @@ downloadLinks.forEach((link) => {
 });
 
 loadDownloadCount();
+
+async function loadCommercialSalesCount() {
+  if (!commercialSalesCount || !commercialSalesLabel) return;
+
+  try {
+    const response = await fetch(`${SUPABASE.url}/functions/v1/commercial-sales-count`, {
+      cache: 'no-store'
+    });
+    if (!response.ok) throw new Error(`contador HTTP ${response.status}`);
+
+    const data = await response.json();
+    const total = Number(data.acquired);
+    if (!Number.isFinite(total) || total < 0) throw new Error('contador inválido');
+
+    commercialSalesCount.textContent = total.toLocaleString('pt-BR');
+    commercialSalesLabel.textContent = total === 1 ? 'licença adquirida' : 'licenças adquiridas';
+  } catch (error) {
+    commercialSalesCount.textContent = '—';
+    commercialSalesLabel.textContent = 'contador temporariamente indisponível';
+    console.warn('Contador de vendas indisponível:', error);
+  }
+}
+
+loadCommercialSalesCount();
 
 const copyEmailButton = document.querySelector('.copy-email');
 const emailFeedback = document.getElementById('email-feedback');

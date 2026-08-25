@@ -163,8 +163,12 @@
             <span class="checkout-label">PAGAMENTO ÚNICO</span>
             <div class="checkout-price"><small>R$</small><strong>49,90</strong></div>
             <p>Licença permanente para 1 computador Windows</p>
-            <a class="button checkout-button" href="https://mpago.la/2u13w7o" target="_blank" rel="noopener noreferrer">Comprar com Mercado Pago <span>→</span></a>
+            <a class="button checkout-button" href="https://bldmkfdgdqlhpxgpvhmf.supabase.co/functions/v1/commercial-checkout" target="_blank" rel="noopener noreferrer">Comprar com Mercado Pago <span>→</span></a>
             <div class="payment-methods"><span>PIX</span><span>Cartão</span><span>Boleto</span></div>
+            <div class="sales-counter" aria-live="polite">
+              <span class="sales-counter-icon">✓</span>
+              <p><strong id="commercial-sales-count">0</strong><small id="commercial-sales-label">licenças adquiridas</small></p>
+            </div>
             <div class="checkout-security"><span>✓</span> Pagamento processado com segurança pelo Mercado Pago</div>
             <a class="license-link" href="licenca-comercial.html">Consultar os termos da licença</a>
           </aside>
@@ -205,6 +209,6 @@
     <nav><a href="#driver">J.R Driver</a><a href="#comercial">J.R Comercial</a><a href="#comprar-comercial">Comprar Comercial</a><a href="licenca-comercial.html">Licença Comercial</a><a href="privacidade.html">Privacidade do Driver</a><a href="termos-de-teste.html">Termos de teste</a></nav>
     <p>© <span id="current-year"></span> J.R Tecnologia Logística. Todos os direitos reservados.</p>
   </div></footer>
-  <script src="app.js?v=20260824-suite1"></script>
+  <script src="app.js?v=20260824-sales-counter1"></script>
 </body>
 </html>
