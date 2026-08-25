@@ -121,9 +121,251 @@ button:focus-visible {
 #driver,
 #instalacao,
 #comercial,
+#comprar-comercial,
 #sobre,
 #contato {
   scroll-margin-top: 82px;
+}
+
+/* Compra do J.R Logística Comercial */
+.commercial-sale-section {
+  position: relative;
+  overflow: hidden;
+  color: #eaf4f8;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(19, 211, 138, .12), transparent 30%),
+    radial-gradient(circle at 88% 82%, rgba(35, 125, 164, .16), transparent 34%),
+    #03172a;
+}
+
+.commercial-sale-section::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: .2;
+  background-image: linear-gradient(rgba(115, 174, 202, .13) 1px, transparent 1px), linear-gradient(90deg, rgba(115, 174, 202, .13) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.commercial-sale-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.commercial-sale-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(330px, .75fr);
+  gap: 70px;
+  align-items: center;
+  padding: 58px 62px;
+  border: 1px solid rgba(112, 190, 216, .2);
+  border-radius: 30px;
+  background: rgba(3, 30, 51, .82);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .22);
+}
+
+.sale-copy h2 {
+  max-width: 760px;
+  margin: 12px 0 16px;
+  color: #fff;
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.04;
+}
+
+.sale-copy > p {
+  max-width: 720px;
+  margin: 0;
+  color: #b8ceda;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.sale-benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 28px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sale-benefits li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 11px;
+  align-items: start;
+}
+
+.sale-benefits li > span {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  color: #022136;
+  background: #13d38a;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.sale-benefits strong,
+.sale-benefits small {
+  display: block;
+}
+
+.sale-benefits strong {
+  color: #fff;
+  font-size: 14px;
+}
+
+.sale-benefits small {
+  margin-top: 5px;
+  color: #8eabbc;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.commercial-checkout-card {
+  padding: 34px;
+  border: 1px solid rgba(19, 211, 138, .35);
+  border-radius: 24px;
+  color: #0b2238;
+  background: #f7fbfc;
+  box-shadow: 0 22px 54px rgba(0, 0, 0, .27);
+}
+
+.checkout-label {
+  color: #087d5a;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .14em;
+}
+
+.checkout-price {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 10px 0 4px;
+}
+
+.checkout-price small {
+  margin-top: 13px;
+  color: #37576b;
+  font-size: 17px;
+  font-weight: 850;
+}
+
+.checkout-price strong {
+  color: #061d31;
+  font-size: 58px;
+  line-height: 1;
+  letter-spacing: -.045em;
+}
+
+.commercial-checkout-card > p {
+  margin: 12px 0 24px;
+  color: #5a7181;
+  font-size: 14px;
+}
+
+.checkout-button {
+  width: 100%;
+  justify-content: center;
+  color: #fff;
+  background: #0aae78;
+  box-shadow: 0 13px 28px rgba(10, 174, 120, .24);
+}
+
+.checkout-button:hover {
+  color: #fff;
+  background: #078d62;
+}
+
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 18px;
+}
+
+.payment-methods span {
+  padding: 7px 10px;
+  border: 1px solid #d7e4e9;
+  border-radius: 8px;
+  color: #466477;
+  background: #fff;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.checkout-security {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #dce8ed;
+  color: #60798a;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.checkout-security span {
+  color: #0aae78;
+  font-weight: 900;
+}
+
+.license-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: #087d5a;
+  font-size: 11px;
+  font-weight: 850;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.purchase-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.purchase-steps article {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid rgba(112, 190, 216, .17);
+  border-radius: 16px;
+  background: rgba(3, 30, 51, .68);
+}
+
+.purchase-steps article > span {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 11px;
+  color: #13d38a;
+  background: rgba(19, 211, 138, .1);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.purchase-steps strong {
+  display: block;
+  color: #fff;
+  font-size: 13px;
+}
+
+.purchase-steps p {
+  margin: 5px 0 0;
+  color: #8eabbc;
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .email-address {
@@ -436,9 +678,20 @@ button:focus-visible {
   #driver,
   #instalacao,
   #comercial,
+  #comprar-comercial,
   #sobre,
   #contato {
     scroll-margin-top: 72px;
+  }
+
+  .commercial-sale-card {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding: 44px;
+  }
+
+  .commercial-checkout-card {
+    max-width: 520px;
   }
 
   .legal-page .legal-nav a {
@@ -447,6 +700,36 @@ button:focus-visible {
 }
 
 @media (max-width: 680px) {
+  .commercial-sale-card {
+    gap: 30px;
+    padding: 30px 22px;
+    border-radius: 22px;
+  }
+
+  .sale-copy h2 {
+    font-size: 36px;
+  }
+
+  .sale-copy > p {
+    font-size: 15px;
+  }
+
+  .sale-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .commercial-checkout-card {
+    padding: 26px 20px;
+  }
+
+  .checkout-price strong {
+    font-size: 52px;
+  }
+
+  .purchase-steps {
+    grid-template-columns: 1fr;
+  }
+
   .screenshot-frame {
     border-radius: 15px;
     transform: none;
