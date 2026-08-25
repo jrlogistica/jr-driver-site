@@ -4,6 +4,94 @@ button {
   font: inherit;
 }
 
+/* Entrega automática da licença comercial */
+.purchase-delivery-page {
+  min-height: 100vh;
+  color: #dbeaf2;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(19, 211, 138, .14), transparent 30%),
+    radial-gradient(circle at 84% 80%, rgba(31, 111, 159, .2), transparent 34%),
+    #03172a;
+}
+
+.purchase-delivery-header {
+  display: flex;
+  width: min(100% - 36px, 1180px);
+  min-height: 84px;
+  margin: auto;
+  align-items: center;
+}
+
+.purchase-delivery-header .brand-copy strong { color: #fff; }
+
+.purchase-delivery-main {
+  display: grid;
+  min-height: calc(100vh - 84px);
+  place-items: center;
+  padding: 34px 18px 70px;
+}
+
+.purchase-delivery-card {
+  width: min(100%, 720px);
+  padding: 50px 54px;
+  border: 1px solid rgba(111, 191, 217, .22);
+  border-radius: 30px;
+  background: rgba(4, 31, 52, .92);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .32);
+  text-align: center;
+}
+
+.purchase-delivery-seal {
+  display: grid;
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 22px;
+  place-items: center;
+  border-radius: 20px;
+  color: #002b26;
+  background: #13d38a;
+  font-size: 28px;
+  font-weight: 950;
+  box-shadow: 0 14px 34px rgba(19, 211, 138, .2);
+}
+
+.purchase-delivery-seal.is-error { color: #fff; background: #e05252; }
+.purchase-delivery-card h1 { margin: 12px 0 14px; color: #fff; font-size: clamp(34px, 5vw, 50px); line-height: 1.05; }
+.purchase-delivery-lead { max-width: 580px; margin: 0 auto; color: #b8ceda; font-size: 16px; line-height: 1.65; }
+
+.purchase-delivery-progress { display: flex; margin: 30px auto 8px; justify-content: center; gap: 8px; }
+.purchase-delivery-progress span { width: 10px; height: 10px; border-radius: 50%; background: #13d38a; animation: purchasePulse 1.1s infinite ease-in-out; }
+.purchase-delivery-progress span:nth-child(2) { animation-delay: .15s; }
+.purchase-delivery-progress span:nth-child(3) { animation-delay: .3s; }
+@keyframes purchasePulse { 0%, 100% { opacity: .25; transform: scale(.8); } 50% { opacity: 1; transform: scale(1); } }
+
+.purchase-license-panel {
+  margin-top: 30px;
+  padding: 26px;
+  border: 1px solid rgba(19, 211, 138, .35);
+  border-radius: 20px;
+  background: rgba(19, 211, 138, .07);
+}
+.purchase-license-panel > span { display: block; color: #58e5b3; font-size: 10px; font-weight: 900; letter-spacing: .16em; }
+.purchase-license-panel > strong { display: block; margin: 15px 0 18px; color: #fff; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: clamp(17px, 3.4vw, 27px); letter-spacing: .06em; }
+.purchase-license-panel > small { display: block; margin-top: 14px; color: #91aabd; font-size: 11px; line-height: 1.5; }
+.purchase-license-panel .button { min-height: 42px; color: #fff; border-color: rgba(255, 255, 255, .22); }
+
+.purchase-delivery-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+.purchase-delivery-actions .button { width: 100%; }
+.purchase-delivery-actions .button-outline { color: #fff; border-color: rgba(255, 255, 255, .18); }
+.purchase-delivery-help { margin-top: 30px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, .09); color: #91aabd; }
+.purchase-delivery-help strong { color: #dbeaf2; font-size: 13px; }
+.purchase-delivery-help p { margin: 7px auto; max-width: 560px; font-size: 11px; line-height: 1.6; }
+.purchase-delivery-help a { color: #31dfa5; font-size: 12px; font-weight: 850; }
+
+@media (max-width: 680px) {
+  .purchase-delivery-card { padding: 36px 22px; border-radius: 22px; }
+  .purchase-delivery-actions { grid-template-columns: 1fr; }
+  .purchase-delivery-header { min-height: 72px; }
+  .purchase-delivery-main { min-height: calc(100vh - 72px); }
+}
+
 .brand-logo {
   width: 78px;
   height: 52px;
