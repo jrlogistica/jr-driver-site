@@ -916,3 +916,57 @@ button:focus-visible {
     padding: 28px 22px;
   }
 }
+
+
+/* Captura real do J.R Driver — substitui a interface ilustrativa. */
+.driver-real-visual {
+  margin: 0;
+}
+
+.real-phone-shell {
+  overflow: hidden;
+  background: #020b13;
+}
+
+.phone-screen-real {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  background-color: #061923;
+  background-image: url("jr-driver-screen-real-source.png?v=20260828");
+  background-repeat: no-repeat;
+  background-size: 230% auto;
+  background-position: 50% 66%;
+}
+
+.driver-real-visual figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: #93adbd;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+
+.driver-real-visual figcaption span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 5px rgba(19, 211, 138, .12);
+}
+
+@media (max-width: 680px) {
+  .phone-screen-real {
+    min-height: 490px;
+    background-position: 50% 65%;
+  }
+
+  .driver-real-visual figcaption {
+    padding-inline: 8px;
+    text-align: center;
+  }
+}
