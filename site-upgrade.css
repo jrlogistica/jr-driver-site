@@ -930,13 +930,15 @@ button:focus-visible {
 
 .phone-screen-real {
   position: relative;
-  min-height: 520px;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 423 / 921;
   overflow: hidden;
   background-color: #061923;
-  background-image: url("jr-driver-screen-real-source.png?v=20260828");
+  background-image: url("jr-driver-screen-real-source.png?v=20260828-route-screen");
   background-repeat: no-repeat;
-  background-size: 230% auto;
-  background-position: 50% 66%;
+  background-size: 100% 100%;
+  background-position: center;
 }
 
 .driver-real-visual figcaption {
@@ -961,8 +963,8 @@ button:focus-visible {
 
 @media (max-width: 680px) {
   .phone-screen-real {
-    min-height: 490px;
-    background-position: 50% 65%;
+    min-height: 0;
+    background-position: center;
   }
 
   .driver-real-visual figcaption {
