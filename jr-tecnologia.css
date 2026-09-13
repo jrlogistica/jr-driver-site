@@ -14,3 +14,8 @@
 .finance-status{color:#2566b1}
 .hero .status-pill{color:#d2e7ff}
 .nav-links{gap:clamp(10px,1.2vw,20px)}
+
+.jr-approved-logo{display:block;position:relative;width:190px;height:64px;overflow:hidden;flex-shrink:0}
+.jr-approved-logo img{position:absolute;width:360px;max-width:none;height:auto;left:-85px;top:-51px;object-fit:contain}
+.footer-brand .jr-approved-logo{width:190px;height:64px}
+@media(max-width:680px){.jr-approved-logo{width:165px;height:58px}.jr-approved-logo img{width:320px;left:-75px;top:-45px}}
