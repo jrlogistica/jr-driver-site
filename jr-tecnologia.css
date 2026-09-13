@@ -1,0 +1,16 @@
+:root{--green:#58a6ff;--mint:#e8f2ff}
+.hero{background:radial-gradient(circle at 75% 25%,rgba(62,126,230,.25),transparent 45%),linear-gradient(135deg,#071728,#102d49)}
+.hero h1 em{color:#78b8ff}
+.brand-copy small{letter-spacing:.12em}
+.button-primary{background:#277be8;color:#fff}
+.button-primary:hover{background:#1d64c4;color:#fff}
+.nav-cta{background:#277be8!important;color:#fff!important}
+.section-kicker,.text-link{color:#236ab3}
+.hero .eyebrow,.driver-section .section-kicker,.finance-section .section-kicker{color:#91c7ff}
+.check-list li:before{color:#236ab3}
+.solution-card:before{background:#3989e8}
+.solution-driver:before{background:#17af81}
+.product-status{color:#167453}
+.finance-status{color:#2566b1}
+.hero .status-pill{color:#d2e7ff}
+.nav-links{gap:clamp(10px,1.2vw,20px)}
