@@ -1,4 +1,4 @@
-.solution-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.solution-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .solution-card{display:flex;flex-direction:column}
 .solution-card .solution-actions{margin-top:auto;padding-top:26px}
 .solution-finance:before{background:#3487f8}
@@ -40,3 +40,18 @@
 
 .finance-section .button-outline{color:#eaf4ff;border-color:rgba(170,205,245,.55);background:rgba(255,255,255,.035)}
 .finance-section .button-outline:hover{background:rgba(255,255,255,.09);border-color:#8ec2ff}
+
+/* J.R Finance — produto principal */
+.solution-finance{grid-column:1/-1;border-color:#b9d7ff;background:linear-gradient(135deg,#fff,#f3f8ff)}
+.solution-finance:after{content:"PRODUTO PRINCIPAL";position:absolute;top:0;right:28px;padding:7px 12px;border-radius:0 0 10px 10px;background:#287ff0;color:#fff;font-size:8px;font-weight:950;letter-spacing:.12em}
+.solution-finance .check-list{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:34px}
+.solution-finance .solution-brand img{width:82px;height:82px}
+.finance-featured-board{border-color:rgba(100,166,255,.45);background:linear-gradient(135deg,rgba(42,124,238,.2),rgba(1,18,34,.55));box-shadow:inset 4px 0 0 #3487f8}
+.finance-featured-board .board-tag{background:#287ff0;color:#fff}
+.finance-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:24px 0}
+.finance-steps article{display:grid;grid-template-columns:34px 1fr;gap:11px;padding:14px;border:1px solid rgba(126,184,250,.2);border-radius:14px;background:rgba(78,144,220,.08)}
+.finance-steps b{color:#77b5ff;font-size:11px;letter-spacing:.08em}
+.finance-steps strong{font-size:13px;color:#f6f9ff}
+.finance-steps p{margin:4px 0 0;color:#a9c1d8;font-size:11px;line-height:1.5}
+.finance-local strong{color:#f6f9ff}
+@media(max-width:700px){.solution-finance .check-list,.finance-steps{grid-template-columns:1fr}.solution-finance:after{right:18px}.solution-finance .solution-brand img{width:64px;height:64px}}
