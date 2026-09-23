@@ -40,3 +40,6 @@
 .finance-real-visual figcaption{color:#a8bed4}
 .finance-real-visual figcaption span{background:#4da3ff;box-shadow:0 0 0 5px rgba(77,163,255,.14)}
 .finance-real-visual img{aspect-ratio:1440/652;object-fit:cover}
+
+.finance-section .button-outline{color:#eaf4ff;border-color:rgba(170,205,245,.55);background:rgba(255,255,255,.035)}
+.finance-section .button-outline:hover{background:rgba(255,255,255,.09);border-color:#8ec2ff}
