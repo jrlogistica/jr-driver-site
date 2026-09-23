@@ -34,3 +34,9 @@
 .comparison-row{grid-template-columns:1.2fr repeat(3,minmax(0,1fr))}
 @media(max-width:1100px){.solution-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.solution-finance{grid-column:1/-1}.finance-layout{grid-template-columns:1fr}.finance-showcase{max-width:720px}}
 @media(max-width:700px){.solution-grid{grid-template-columns:1fr}.solution-finance{grid-column:auto}.finance-showcase{padding:18px}.comparison-table{overflow-x:auto}.comparison-row{grid-template-columns:130px repeat(3,145px);min-width:595px;gap:10px}.comparison-row span,.comparison-head span{grid-column:auto;display:block}.comparison-note{min-width:595px}}
+
+.finance-real-visual .screenshot-frame{border-color:rgba(131,180,237,.25);transform:none;box-shadow:0 24px 60px rgba(0,0,0,.28)}
+.finance-real-visual .screenshot-bar{background:#071728}
+.finance-real-visual figcaption{color:#a8bed4}
+.finance-real-visual figcaption span{background:#4da3ff;box-shadow:0 0 0 5px rgba(77,163,255,.14)}
+.finance-real-visual img{aspect-ratio:1440/652;object-fit:cover}
