@@ -55,3 +55,5 @@
 .finance-steps p{margin:4px 0 0;color:#a9c1d8;font-size:11px;line-height:1.5}
 .finance-local strong{color:#f6f9ff}
 @media(max-width:700px){.solution-finance .check-list,.finance-steps{grid-template-columns:1fr}.solution-finance:after{right:18px}.solution-finance .solution-brand img{width:64px;height:64px}}
+
+#finance,#comprar-finance{scroll-margin-top:82px}
