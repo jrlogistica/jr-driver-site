@@ -42,6 +42,8 @@ const commercialSalesCount = document.getElementById('commercial-sales-count');
 const commercialSalesLabel = document.getElementById('commercial-sales-label');
 const siteVisitsTotal = document.getElementById('site-visits-total');
 const siteVisitsToday = document.getElementById('site-visits-today');
+const financeDownloadCount = document.getElementById('finance-download-count');
+const financeDownloadStatus = document.getElementById('finance-download-counter-status');
 
 versionTargets.forEach((target) => { target.textContent = DRIVER_RELEASE.version; });
 versionLabelTargets.forEach((target) => { target.textContent = DRIVER_RELEASE.label; });
@@ -148,6 +150,27 @@ async function loadCommercialSalesCount() {
 }
 
 loadCommercialSalesCount();
+
+async function loadFinanceDownloadCount() {
+  if (!financeDownloadCount || !financeDownloadStatus) return;
+
+  try {
+    const total = await callCounterRpc('get_jr_finance_download_count');
+    const value = Number(total);
+    if (!Number.isFinite(value) || value < 0) throw new Error('contador inválido');
+
+    financeDownloadCount.textContent = value.toLocaleString('pt-BR');
+    financeDownloadStatus.textContent = value === 1
+      ? 'instalador baixado após uma compra aprovada'
+      : 'instaladores baixados após compras aprovadas';
+  } catch (error) {
+    financeDownloadCount.textContent = '—';
+    financeDownloadStatus.textContent = 'contador temporariamente indisponível';
+    console.warn('Contador de downloads do Finance indisponível:', error);
+  }
+}
+
+loadFinanceDownloadCount();
 
 const SITE_VISIT_STORAGE_KEY = 'jr_site_visit_registered_day';
 
