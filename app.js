@@ -40,6 +40,8 @@ const countTarget = document.getElementById('download-count');
 const countStatus = document.getElementById('download-counter-status');
 const commercialSalesCount = document.getElementById('commercial-sales-count');
 const commercialSalesLabel = document.getElementById('commercial-sales-label');
+const siteVisitsTotal = document.getElementById('site-visits-total');
+const siteVisitsToday = document.getElementById('site-visits-today');
 
 versionTargets.forEach((target) => { target.textContent = DRIVER_RELEASE.version; });
 versionLabelTargets.forEach((target) => { target.textContent = DRIVER_RELEASE.label; });
@@ -146,6 +148,63 @@ async function loadCommercialSalesCount() {
 }
 
 loadCommercialSalesCount();
+
+const SITE_VISIT_STORAGE_KEY = 'jr_site_visit_registered_day';
+
+function browserDayKey() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function showSiteVisitStats(stats) {
+  if (!stats || !siteVisitsTotal || !siteVisitsToday) return;
+
+  const total = Number(stats.total);
+  const today = Number(stats.today);
+
+  siteVisitsTotal.textContent = Number.isFinite(total) ? total.toLocaleString('pt-BR') : '—';
+  siteVisitsToday.textContent = Number.isFinite(today) ? today.toLocaleString('pt-BR') : '—';
+}
+
+async function loadSiteVisitStats() {
+  if (!siteVisitsTotal || !siteVisitsToday) return;
+
+  const currentDay = browserDayKey();
+  let lastRegisteredDay = '';
+
+  try {
+    lastRegisteredDay = window.localStorage.getItem(SITE_VISIT_STORAGE_KEY) || '';
+  } catch {
+    lastRegisteredDay = '';
+  }
+
+  const shouldRegister = lastRegisteredDay !== currentDay;
+
+  try {
+    const stats = await callCounterRpc(
+      shouldRegister ? 'register_jr_site_visit' : 'get_jr_site_visit_stats'
+    );
+
+    showSiteVisitStats(stats);
+
+    if (shouldRegister) {
+      try {
+        window.localStorage.setItem(SITE_VISIT_STORAGE_KEY, currentDay);
+      } catch {
+        // O contador continua funcionando mesmo se o navegador bloquear o armazenamento local.
+      }
+    }
+  } catch (error) {
+    siteVisitsTotal.textContent = '—';
+    siteVisitsToday.textContent = '—';
+    console.warn('Contador de visitas indisponível:', error);
+  }
+}
+
+loadSiteVisitStats();
 
 const copyEmailButton = document.querySelector('.copy-email');
 const emailFeedback = document.getElementById('email-feedback');
