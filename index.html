@@ -9,22 +9,47 @@
   <meta property="og:description" content="Controle financeiro completo para pessoas e empresas. Compra única de R$ 19,90 para Windows.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="jr-finance-dashboard-real.svg">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="J.R Tecnologia">
   <title>J.R Finance | Controle financeiro para Windows</title>
   <link rel="icon" href="jr-finance-icon.png">
-  <link rel="stylesheet" href="finance-site.css?v=20260928-pro">
+  <link rel="stylesheet" href="finance-site.css?v=20260930-diagnostico">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"J.R Finance","applicationCategory":"FinanceApplication","operatingSystem":"Windows","description":"Sistema de controle financeiro para pessoas e empresas com entradas, saídas, contas, cartões, metas, orçamentos, relatórios e funcionamento offline.","offers":{"@type":"Offer","price":"19.90","priceCurrency":"BRL","availability":"https://schema.org/InStock"},"publisher":{"@type":"Organization","name":"J.R Tecnologia"}}</script>
 </head>
 <body>
 <header class="site-header" id="inicio"><div class="container nav-wrap">
   <a class="brand" href="#inicio" aria-label="J.R Tecnologia"><img src="jr-tecnologia-logo-clean.png?v=2" alt="J.R Tecnologia"></a>
   <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  <nav class="nav-links" aria-label="Navegação principal"><a href="#recursos">Recursos</a><a href="#como-funciona">Como funciona</a><a href="#seguranca">Segurança</a><a href="#duvidas">Dúvidas</a><a class="nav-cta" href="#comprar">Comprar por R$ 19,90</a></nav>
+  <nav class="nav-links" aria-label="Navegação principal"><a href="#diagnostico">Diagnóstico grátis</a><a href="#recursos">Recursos</a><a href="#como-funciona">Como funciona</a><a href="#duvidas">Dúvidas</a><a class="nav-cta" href="#comprar">Comprar por R$ 19,90</a></nav>
 </div></header>
 <main>
   <section class="hero"><div class="hero-glow"></div><div class="container hero-grid">
-    <div class="hero-copy"><div class="product-pill"><img src="jr-finance-icon.png" alt=""><span>J.R FINANCE PARA WINDOWS</span></div><h1>Enxergue seu dinheiro.<br><em>Decida com clareza.</em></h1><p>Entradas, saídas, contas, cartões, metas e relatórios em um só lugar. Para sua vida pessoal ou para seu negócio.</p><div class="hero-actions"><a class="button primary" href="#comprar">Comprar por R$ 19,90 <span>→</span></a><a class="button secondary" href="#produto">Conhecer o sistema</a></div><div class="hero-trust"><span><b>✓</b> Compra única</span><span><b>✓</b> Sem mensalidade</span><span><b>✓</b> Dados no seu computador</span></div></div>
+    <div class="hero-copy"><div class="product-pill"><img src="jr-finance-icon.png" alt=""><span>J.R FINANCE PARA WINDOWS</span></div><h1>Enxergue seu dinheiro.<br><em>Decida com clareza.</em></h1><p>Entradas, saídas, contas, cartões, metas e relatórios em um só lugar. Para sua vida pessoal ou para seu negócio.</p><div class="hero-actions"><a class="button primary" href="#diagnostico">Fazer diagnóstico grátis <span>→</span></a><a class="button secondary" href="#produto">Conhecer o sistema</a></div><div class="hero-trust"><span><b>✓</b> Resultado imediato</span><span><b>✓</b> Sem cadastro</span><span><b>✓</b> Seus dados não são enviados</span></div></div>
     <div class="hero-product" id="produto"><div class="app-window"><div class="window-bar"><span><i></i><i></i><i></i></span><b>J.R FINANCE</b><small>WINDOWS</small></div><img src="jr-finance-dashboard-real.svg?v=20260923" width="1440" height="652" alt="Painel do J.R Finance"></div><div class="product-badge"><span>LICENÇA PERMANENTE</span><strong>R$ 19,90</strong><small>1 computador · sem mensalidade</small></div></div>
   </div></section>
   <section class="proof-strip"><div class="container proof-grid"><article><strong>Pagamento único</strong><span>Sem assinatura ou mensalidade</span></article><article><strong>Vários usuários</strong><span>Cada perfil com seus próprios dados</span></article><article><strong>Funciona offline</strong><span>Sem depender da internet</span></article></div></section>
+
+  <section class="section diagnosis" id="diagnostico"><div class="container diagnosis-grid">
+    <div class="diagnosis-copy"><span class="eyebrow">DIAGNÓSTICO FINANCEIRO GRATUITO</span><h2>Descubra como está sua vida financeira em 2 minutos.</h2><p>Informe valores aproximados do seu mês. O cálculo acontece somente no seu navegador e nenhum dado financeiro é enviado ou armazenado.</p><ol><li><b>Informe sua renda</b><span>Considere o total líquido recebido no mês.</span></li><li><b>Some seus gastos</b><span>Separe compromissos fixos e despesas variáveis.</span></li><li><b>Receba uma análise</b><span>Veja sua margem mensal e o próximo passo recomendado.</span></li></ol>
+      <div class="diagnosis-privacy"><span>✓</span><p><strong>Privacidade desde o início</strong>Este diagnóstico não exige nome, e-mail ou telefone.</p></div>
+    </div>
+    <div class="diagnosis-card">
+      <div class="diagnosis-head"><div><span>SEU MÊS EM NÚMEROS</span><h3>Preencha para calcular</h3></div><b>GRÁTIS</b></div>
+      <form id="diagnosis-form" novalidate>
+        <label for="income">Renda líquida mensal <span>R$</span></label><input id="income" name="income" inputmode="decimal" autocomplete="off" placeholder="Ex.: 3.500,00" required>
+        <div class="field-grid"><div><label for="fixed-expenses">Gastos fixos <span>R$</span></label><input id="fixed-expenses" name="fixedExpenses" inputmode="decimal" autocomplete="off" placeholder="Ex.: 1.800,00" required></div><div><label for="variable-expenses">Gastos variáveis <span>R$</span></label><input id="variable-expenses" name="variableExpenses" inputmode="decimal" autocomplete="off" placeholder="Ex.: 900,00" required></div></div>
+        <label for="debts">Parcelas e dívidas mensais <span>R$</span></label><input id="debts" name="debts" inputmode="decimal" autocomplete="off" placeholder="Ex.: 300,00">
+        <p class="form-error" id="diagnosis-error" role="alert" aria-live="polite"></p>
+        <button class="button diagnosis-submit" type="submit">Ver meu diagnóstico <span>→</span></button>
+      </form>
+      <section class="diagnosis-result" id="diagnosis-result" aria-live="polite" hidden>
+        <div class="result-status"><span id="result-badge">RESULTADO</span><h3 id="result-title"></h3><p id="result-message"></p></div>
+        <div class="result-numbers"><article><span>Sobra mensal</span><strong id="result-balance"></strong></article><article><span>Renda comprometida</span><strong id="result-commitment"></strong></article></div>
+        <div class="result-meter"><span id="result-meter-bar"></span></div>
+        <div class="result-action"><p id="result-tip"></p><a class="button primary" href="#comprar">Organizar com o J.R Finance <span>→</span></a><button id="diagnosis-restart" type="button">Refazer diagnóstico</button></div>
+      </section>
+    </div>
+  </div></section>
 
   <section class="section overview" id="recursos"><div class="container"><div class="section-heading"><span class="eyebrow">CONTROLE COMPLETO, SEM COMPLICAÇÃO</span><h2>Tudo o que você precisa para organizar sua vida financeira.</h2><p>Uma visão clara do presente e ferramentas para planejar o que vem pela frente.</p></div><div class="feature-grid">
     <article class="feature-card feature-main"><span class="feature-number">01</span><h3>Entradas e saídas</h3><p>Registre receitas e despesas, pesquise movimentações e acompanhe seu fluxo de caixa.</p><div class="mini-chart"><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
@@ -46,5 +71,5 @@
   <section class="final-cta"><div class="container final-card"><div><span>J.R FINANCE PARA WINDOWS</span><h2>Seu dinheiro merece organização.</h2><p>Comece hoje por R$ 19,90, sem mensalidade.</p></div><a class="button primary" href="#comprar">Quero o J.R Finance <span>→</span></a></div></section>
 </main>
 <footer><div class="container footer-main"><div class="footer-brand"><img src="jr-tecnologia-logo-clean.png?v=2" alt="J.R Tecnologia"><p>Tecnologia para simplificar sua rotina.</p></div><nav><strong>J.R Finance</strong><a href="#recursos">Recursos</a><a href="#como-funciona">Como funciona</a><a href="#comprar">Comprar</a></nav><nav><strong>Atendimento</strong><a href="https://wa.me/5551994647219" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/jrtecnologia.app/" target="_blank" rel="noopener">Instagram</a><a href="licenca-finance.html">Termos da licença</a></nav><div class="site-visit-counter"><span></span><div><strong><b id="site-visits-total">—</b> acessos</strong><small><b id="site-visits-today">—</b> hoje</small></div></div></div><div class="container footer-bottom"><p>© <span id="current-year"></span> J.R Tecnologia. Todos os direitos reservados.</p><p>J.R Finance · Windows</p></div></footer>
-<script src="app.js?v=20260928-pro"></script>
+<script src="app.js?v=20260930-diagnostico"></script>
 </body></html>
